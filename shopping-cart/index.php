@@ -14,18 +14,18 @@
 <body>
 <!-- Navbar start -->
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
-<a class="navbar-brand" href="index.php"><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Mobile Store</a>
+<a class="navbar-brand" href="index.php"><i class="fas fa-car-alt"></i>&nbsp;&nbsp;Car Store</a>
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	<span class="navbar-toggler-icon"></span>
 </button>
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 	<ul class="navbar-nav ml-auto">
 	<li class="nav-item">
-		<a class="nav-link active" href="index.php"><i class="fas fa-mobile-alt mr-2"></i>Products</a>
+		<a class="nav-link active" href="index.php"><i class="fas fa-car-alt mr-2"></i>Products</a>
 	</li>
-	<li class="nav-item">
-		<a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
-	</li>
+		<!-- <li class="nav-item">
+			<a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
+		</li> -->
 	<li class="nav-item">
 		<a class="nav-link" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
 	</li>
@@ -54,8 +54,7 @@
 		<img src="<?= $row['product_image'] ?>" class="card-img-top" height="250">
 		<div class="card-body p-1">
 			<h4 class="card-title text-center text-info"><?= $row['product_name'] ?></h4>
-			<h5 class="card-text text-center text-danger"><i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($row['product_price'],2) ?>/-</h5>
-
+			<h5 class="card-text text-center text-danger"><i class="fas fa-dollar-sign"></i><?= number_format($row['product_price'],2) ?>/-</h5>
 		</div>
 		<div class="card-footer p-1">
 			<form action="" class="form-submit">
@@ -72,7 +71,7 @@
 			<input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
 			<input type="hidden" class="pimage" value="<?= $row['product_image'] ?>">
 			<input type="hidden" class="pcode" value="<?= $row['product_code'] ?>">
-			<button class="btn btn-info btn-block addItemBtn"><i class="fas fa-cart-plus"></i>&nbsp;&nbsp;Add to
+			<button class="btn btn-info btn-block addItemBtn"><i class="fas fa-cart-plus"></i>Add to
 				cart</button>
 			</form>
 		</div>

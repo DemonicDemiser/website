@@ -18,7 +18,7 @@ session_start();
 <body>
 <nav class="navbar navbar-expand-md bg-dark navbar-dark">
 <!-- Brand -->
-<a class="navbar-brand" href="index.php"><i class="fas fa-mobile-alt"></i>&nbsp;&nbsp;Mobile Store</a>
+<a class="navbar-brand" href="index.php"><i class="fas fa-car-alt"></i>&nbsp;&nbsp;Car Store</a>
 <!-- Toggler/collapsibe Button -->
 <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#collapsibleNavbar">
 	<span class="navbar-toggler-icon"></span>
@@ -27,11 +27,11 @@ session_start();
 <div class="collapse navbar-collapse" id="collapsibleNavbar">
 	<ul class="navbar-nav ml-auto">
 	<li class="nav-item">
-		<a class="nav-link active" href="index.php"><i class="fas fa-mobile-alt mr-2"></i>Products</a>
+		<a class="nav-link active" href="index.php"><i class="fas fa-car-alt mr-2"></i>Products</a>
 	</li>
-	<li class="nav-item">
+	<!-- <li class="nav-item">
 		<a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
-	</li>
+	</li> -->
 	<li class="nav-item">
 		<a class="nav-link" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
 	</li>
@@ -90,7 +90,7 @@ echo $_SESSION['message'];
 			<td><img src="<?= $row['product_image'] ?>" width="50"></td>
 			<td><?= $row['product_name'] ?></td>
 			<td>
-				<i class="fas fa-rupee-sign"></i>&nbsp;&nbsp;<?= number_format($row['product_price'],2); ?>
+				<i class="fas fa-dollar-sign"></i>&nbsp;&nbsp;<?= number_format($row['product_price'],2); ?>
 			</td>
 			<input type="hidden" class="pprice" value="<?= $row['product_price'] ?>">
 			<td>
