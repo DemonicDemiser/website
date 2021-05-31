@@ -38,9 +38,9 @@ if (isset($_COOKIE['email']) and isset($_COOKIE['pass'])){
     $pass = $_COOKIE['pass'];
 
     echo "	<script>
-					 document.getElementById('email').value = '$email';
-					 document.getElementById('pass').value = '$pass';
-					 document.getElementById('submit').click();
-				</script>";
+                    document.getElementById('email').value = '$email';
+                    document.getElementById('pass').value = '$pass';
+                    document.getElementById('submit').click();
+            </script>";
 }
 ?>
