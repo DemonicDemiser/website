@@ -96,14 +96,14 @@
             if(mysqli_error($conn)){
                 echo "The error of mysql is: ".mysqli_error($conn);
             } else{
-                $company = mysqli_fetch_all($check,MYSQLI_NUM);
+                $company = mysqli_fetch_all($check, MYSQLI_NUM);
                 for ($i=0; $i < count($company); $i++) {
                     echo "<div class='col-5 my-3 section text-center' style='height: 500px;'>
-                      <image class='rounded-circle' src='".$company[$i][3]."' width='100px;' height='100px;'>
-                      <div class='w-100 mt-3'>".$company[$i][0]." </div>
-                      <div class ='w-100 mt-2'>".$company[$i][1]." </div><hr>
-                      <div class ='w-100 mt-3' style='height: 230px;'>".$company[$i][2]." </div><hr>
-                  </div>";
+                        <image class='rounded-circle' src='".$company[$i][3]."' width='100px;' height='100px;'>
+                        <div class='w-100 mt-3'>".$company[$i][0]." </div>
+                        <div class ='w-100 mt-2'>".$company[$i][1]." </div><hr>
+                        <div class ='w-100 mt-3' style='height: 230px;'>".$company[$i][2]." </div><hr>
+                    </div>";
                 }
             }
             ?>

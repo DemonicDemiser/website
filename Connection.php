@@ -1,8 +1,8 @@
 <?php
     $host = 'localhost';
     $user = 'root';
-    $pass = 'vpmke7';
-    $name = 'final_website';
+    $pass = '';
+    $name = 'test';
 
     $conn = mysqli_connect($host, $user, $pass, $name);
 
