@@ -17,6 +17,7 @@
 	$stmt->execute();
 	$res = $stmt->get_result();
 	$r = $res->fetch_assoc();
+	
 	$code = $r['product_code'] ?? '';
 
 	if (!$code) {
