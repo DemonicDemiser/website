@@ -75,7 +75,8 @@
                     for ($i=0; $i < 3; $i++) {
                         echo "<div class='col-4 my-3 section' style='height: 700px;'>
                             <h3 class='mb-2 text-center' style='height: 50px;'>".$products[$i][0]."</h3>
-                            <image src='".$products[$i][1]."' width='100%' height='270px;'>
+                            <image src='".$products[$i][1].
+                            "' width='100%' height='270px;'>
                             <div class='mt-3 mb-2 text-start' style='height: 170px;'>".$products[$i][2]."</div>
                             <div class='w-100'> Price: ".$products[$i][3]." </div>
                             <div class ='w-100'> Type of car: ".$products[$i][4]." </div>
