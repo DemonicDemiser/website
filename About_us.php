@@ -89,7 +89,7 @@
 
     <div class="row d-flex justify-content-around">
         <?php
-        require ("Connection.php");
+        require ("connect.php");
         $table = "SELECT Full_name,Specialty,About,Picture FROM company WHERE People = 'Leadership'";
         $check = mysqli_query($conn,$table);
         if(mysqli_error($conn)){
