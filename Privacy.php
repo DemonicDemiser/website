@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BmbxuPwQa2lc/FVzBcNJ7UAyJxM6wuqIj61tLrc4wSX0szH/Ev+nYRRuWlolflfl" crossorigin="anonymous"><title>Main</title>
-    <title>Welcome</title>
+    <title>Privacy</title>
     <style>
         .hoverr a{
             color: white;
@@ -22,9 +22,6 @@
         .text{
             font-family: Lucida, sans-serif;
         }
-        .about{
-            font-family: American Typewriter, serif
-        }
     </style>
 </head>
 <body>
@@ -39,75 +36,23 @@
         <div class="hoverr col-xl-2 col-lg-3 text-center"><a href="About_us.php" class="text-decoration-none w-100 p-3">About us</a></div>
         <div class="hoverr col-xl-1 col-lg-3 text-center"><a id="scroll" class="text-decoration-none w-100 p-3">Contacts</a></div>
         <div class="col-1"></div>
-        <div class="col-xl-3 col-lg-12">
-            <div class="row d-flex align-items-center justify-content-center">
-                <?php
-                    session_start();
-                    echo "<form class='col-xl-4 col-sm-2' action='Logout.php' method='post'>
-                        <a href='logout.php' class='btn btn-outline-warning p-1 w-100'>Log out</a>
-                      </form>
-                      <div class='col-xl-4 col-sm-2 \'>
-                          <div class='row'>
-                            <img class='col-10' src='https://static.thenounproject.com/png/88292-200.png' alt='editor' width='40px;' height='60px;'>
-                            <div class='col-2 p-1 d-flex align-items-center text-white'>".$_SESSION['email']."</div>
-                          </div>
-                      </div>"
-                ?>
+        <div class="col-xl-3 col-sm-12">
+            <div class="row d-flex justify-content-center">
+                <button class="col-xl-4 col-sm-2 mt-1 btn btn-outline-warning p-1" type="button" data-toggle="modal" data-target="#exampleModalCenter">Login</button>
+                <form class="col-xl-4 col-sm-2 mt-1" action="Sign_up.php" method="post"><input class="btn btn-outline-success p-1 w-100" type="submit" name="signup" value="Sign up"></form>
             </div>
         </div>
     </div>
-    <div class="row">
-        <div id="carouselimg" class="carousel slide" data-bs-ride="carousel">
-            <div class="carousel-inner">
-                <div class="carousel-item active">
-                    <img src="Pictures\picture1.jpg" class="d-block w-100" alt="Picture1">
-                </div>
-                <div class="carousel-item">
-                    <img src="Pictures\picture2.jpg" class="d-block w-100" alt="Picture2">
-                </div>
-                <div class="carousel-item">
-                    <img src="Pictures\picture3.jpg" class="d-block w-100" alt="Picture3">
-                </div>
-            </div>
-            <button class="carousel-control-prev" type="button" data-bs-target="#carouselimg" data-bs-slide="prev">
-                <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-            </button>
-            <button class="carousel-control-next" type="button" data-bs-target="#carouselimg" data-bs-slide="next">
-                <span class="carousel-control-next-icon" aria-hidden="true"></span>
-            </button>
-        </div>
+    <div class="px-3 py-4">
+        <h3 class="headd text-start">Privacy Statement</h3>
+        <p class="text"> This website, including the mobile and online applications, (the “Site“) is operated by Autoshop.com. This Privacy Statement (the “Statement“) describes Autoshop.com’s collection, use and disclosure of information practices in connection with the Site. This Statement applies to the website located at www.autoshop.com, as well as to any versions of the Site that Autoshop.com operates, including without limitation any mobile or similar versions. Please be aware that Autoshop.com may share information you submit through this Site with affiliates, as described below.</p>
+        <p class="text"> For purposes of clarification, this Statement also describes Autoshop.com's collection, use, and disclosure practices with respect to any personally identifiable information and Usage Data (as defined below) that is provided to Autoshop.com by any of its third-party distribution partners that display Autoshop.com vehicle listings.</p>
+        <p class="text"> This Statement does not describe Autoshop.com's collection, use and disclosure of information through means other than this Site (e.g., off-line) or the collection, use and disclosure practices of any affiliate or other third parties. For information on a third party’s information collection, use and disclosure practices, please review the privacy policy on the applicable third party’s website. Also, please note that this Site contains links to other websites. Autoshop.com is not responsible for the websites, content or privacy practices of any third party. By using this Site, you acknowledge that you have read and agree to be bound by this Statement and agree that you are subject to the Autoshop.com Terms of Service and California & Nevada Privacy Notice.</p>
+        <h3 class="headd text-start">Collection of Personally Identifiable Information</h3>
+        <p class="text"> You are not required to provide any personally identifiable information to visit the Site. Autoshop.com automatically collects Usage Data (as described below) and may collect ZIP codes and other information in connection with your use of the Site (e.g., the type of car you are looking for). Autoshop.com collects personally identifiable information only when you make it available through your use of the Site. You may be required to provide personally identifiable information to use certain services on this Site, including, but not limited to, the “Email the Dealer / Seller” feature and to purchase and create a “Sell It Yourself” online classified listing (“SIY Ad “) and account (“ SIY Account “). In addition, you may submit personally identifiable information through the Site in other ways, including: (a) participating in online surveys, promotions, contests and sweepstakes; (b) subscribing to newsletters, editorial content, or promotional content sent via email, (c) using the Site’s “Feedback” and “More Information” forms; and (d) in connection with other products, services, features, or requests made available through the Site. We also publish toll-free phone numbers for many of the dealerships that list vehicles for sale on the Site. If you dial one of these phone numbers, Autoshop.com or a service provider operating on Autoshop.com's behalf may record the date, time and length of your call and the phone number from which the call originated, along with other information that may be captured. Any Usage Data (as defined in the next section) and / or personally identifiable information resulting from such calls may be used as described in this Statement. The types of personally identifiable information that you provide will depend on the nature of the submission, but could include your name, address, phone number, email address and credit card information.</p>
+        <h3 class="headd text-start">Security</h3>
+        <p class="text"> Your personally identifiable information is one of our most valuable assets. We take steps to keep it physically secure in our data centers and it is accessible only to authorized personnel as needed to perform operations governed by this policy. In addition, when Autoshop.com collects credit card information from you, Autoshop.com uses Secure Socket Layer (SSL) encryption, the industry standard for protecting privacy in web transactions. Please keep in mind that despite these measures, Autoshop.com cannot guarantee or warrant 100 percent security of its servers and databases. Moreover, Autoshop.com cannot guarantee that personally identifiable information that you submit through the Site will not be intercepted or otherwise disclosed.</p>
     </div>
-
-    <div class="row">
-        <div class="col-12 text-center mt-5">
-            <h3 class="headd">Welcome Back! Recommended For You </h3><hr>
-            <div class="row">
-                <?php
-                require ("connect.php");
-                $table = "SELECT Title,Picture,Content,Price,Type_of_car,Publishing_date FROM products";
-                $check = mysqli_query($conn,$table);
-                if(mysqli_error($conn)){
-                    echo "The error of mysql is: ".mysqli_error($conn);
-                } else{
-                    $products = mysqli_fetch_all($check,MYSQLI_NUM);
-                    for ($i=0; $i < 3; $i++) {
-                        echo "<div class='col-4 my-3 section about' style='height: 700px;'>
-                              <h3 class='mb-2 text-center' style='height: 50px;'>".$products[$i][0]."</h3>
-                              <image src='".$products[$i][1]."' width='100%' height='270px;'>
-                              <div class='mt-3 mb-2 text-start' style='height: 170px;'>".$products[$i][2]."</div>
-                              <div class='w-100'> Price: ".$products[$i][3]." </div>
-                              <div class ='w-100'> Type of car: ".$products[$i][4]." </div>
-                              <div class ='w-100'> Publishing date: ".$products[$i][5]." </div>
-                              <hr>
-                          </div>";
-                    }
-                }
-                ?>
-            </div>
-            <div class="col-12 text-center mt-3 mb-5"><a href="https://www.kia.com/us/en/forte?CHID=dis&CID=25143948&SID=1497264&PID=289896239&AID=491446782&CRD=147642585&dclid=CL-oqsL8uu8CFVWPsgodWPkCWQ"><img src="https://s0.2mdn.net/5270447/Cars_970x250_forte.jpg" alt="kia"></a></div>
-        </div>
-    </div>
-
     <div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered" role="document">
             <div class="modal-content">
@@ -159,3 +104,5 @@
 <script src="Main.js"></script>
 </body>
 </html>
+<?php
+
