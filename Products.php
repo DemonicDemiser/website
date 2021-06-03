@@ -14,7 +14,7 @@
             color: aqua;
         }
         .top{
-            background: url("products_picture1.jpg") no-repeat;
+            background: url("Pictures/products_picture1.jpg") no-repeat;
         }
         html {
             scroll-behavior: smooth;
