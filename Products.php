@@ -1,3 +1,8 @@
+<?php
+// Start the session
+session_start();
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -27,6 +32,10 @@
         }
         .about{
             font-family: American Typewriter, serif
+        }
+        .publishing-content{
+            display: flex;
+            justify-content: flex-end;
         }
     </style>
 </head>
@@ -60,23 +69,22 @@
             </div>
             <?php
             require ("connect.php");
-            $table = "SELECT Title,Picture,Content,Price,Type_of_car,Publishing_date FROM products";
-            $check = mysqli_query($conn,$table);
+            $table = "SELECT brand_id, brand_name, brand_image, brand_description, brand_pub_date FROM catalog";
+            $check = mysqli_query($conn, $table);
             if(mysqli_error($conn)){
                 echo "The error of mysql is: ".mysqli_error($conn);
             } else{
-                $products = mysqli_fetch_all($check,MYSQLI_NUM);
+                $products = mysqli_fetch_all($check, MYSQLI_NUM);
                 for ($i=0; $i < count($products); $i++) {
-                    echo "<div class='col-xl-4 col-sm-6 my-3 section about' style='height: 700px;'>
-                            <h3 class='mb-2 text-center' style='height: 50px;'>".$products[$i][0]."</h3>
-                            <image src='".$products[$i][1]."' width='100%' height='270px;'>
-                            <div class='mt-2 mb-1 text-start' style='height: 170px;'>".$products[$i][2]."</div>
-                            <div class='w-100'> Price: ".$products[$i][3]." </div>
-                            <div class ='w-100'> Type of car: ".$products[$i][4]." </div>
-                            <div class ='w-100'> Publishing date: ".$products[$i][5]." </div>
-                            <a href='shopping-cart/checkout.php'><button type='button' onclick='/main.php' class='btn btn-dark btn-sm'>More info</button></a>
+                    echo "<div class='col-xl-4 col-sm-6 my-3 section about' style='height: 600px;'>
+                            <h3 class='mb-2 text-center' style='height: 50px;'>".$products[$i][1]."</h3>
+                            <image src='".$products[$i][2]."' width='100%' height='270px;'>
+                            <div class='mt-2 mb-1 text-start' style='height: 140px;'>".$products[$i][3]."</div>
+                            <div class ='w-100 publishing-content text-secondary'> Publishing date: ".$products[$i][4]." </div>
+                            <a href='shopping-cart/index.php'><button type='button' onclick='/index.php' class='btn btn-dark btn-sm'>More info about ".$products[$i][1]."</button></a>
                             <hr>
-                          </div>";
+                        </div>";
+                    $_SESSION['ids']=$products[$i][0];
                 }
             }
             ?>

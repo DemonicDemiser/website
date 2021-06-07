@@ -76,7 +76,7 @@
                 require ("connect.php");
                 $table = "SELECT Title, Picture, Content, Price, Type_of_car, Publishing_date FROM products";
 
-                $check = mysqli_query($conn,$table);
+                $check = mysqli_query($conn, $table);
 
                 if(mysqli_error($conn)){
                     echo "The error of mysql is: ".mysqli_error($conn);

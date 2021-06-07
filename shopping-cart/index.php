@@ -1,3 +1,7 @@
+<?php
+// Start the session
+session_start();
+?>	
 <!DOCTYPE html>
 <html lang="en">
 
@@ -23,9 +27,9 @@
 	<li class="nav-item">
 		<a class="nav-link active" href="index.php"><i class="fas fa-car-alt mr-2"></i>Products</a>
 	</li>
-		<!-- <li class="nav-item">
-			<a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
-		</li> -->
+	<!-- <li class="nav-item">
+		<a class="nav-link" href="#"><i class="fas fa-th-list mr-2"></i>Categories</a>
+	</li> -->
 	<li class="nav-item">
 		<a class="nav-link" href="checkout.php"><i class="fas fa-money-check-alt mr-2"></i>Checkout</a>
 	</li>
@@ -38,23 +42,53 @@
 <!-- Navbar end -->
 
 <!-- Displaying Products Start -->
-<div class="container">
+<div class="container-fluid">
 <div id="message"></div>
-<div class="row mt-2 pb-3">
+<div class="row mt-2 pb-1">
 	<?php
 		include 'connect.php';
-		$stmt = $conn->prepare('SELECT * FROM product');
+		switch($_SESSION['ids']){
+			case 1: 
+				$stmt = $conn->prepare('SELECT * FROM product');
+			break;
+			case 2:
+				$stmt = $conn->prepare('SELECT * FROM cadillac');
+			break;
+			// case 3:
+			// 	$stmt = $conn->prepare('SELECT * FROM product');
+			// break;
+			// case 4:
+			// 	$stmt = $conn->prepare('SELECT * FROM product');
+			// break;
+			// case 5:
+			// 	$stmt = $conn->prepare('SELECT * FROM product');
+			// break;
+			// case 6:
+			// 	$stmt = $conn->prepare('SELECT * FROM product');
+			// break;
+			// case 7:
+			// 	$stmt = $conn->prepare('SELECT * FROM product');
+			// break;
+			// case 8:
+			// 	$stmt = $conn->prepare('SELECT * FROM product');
+			// break;
+			// case 9:
+			// 	$stmt = $conn->prepare('SELECT * FROM product');
+			// break;
+			default:
+				$stmt = $conn->prepare('SELECT * FROM cadillac');
+		}
 		$stmt->execute();
 		$result = $stmt->get_result();
 		while ($row = $result->fetch_assoc()):
 	?>
 	<div class="col-sm-6 col-md-4 col-lg-3 mb-2">
-	<div class="card-deck">
-		<div class="card p-2 border-secondary mb-2">
+	<div class="card-deck w-100">
+		<div class="card p-2 border-secondary mb-2 w-100">
 		<img src="<?= $row['product_image'] ?>" class="card-img-top" height="250">
 		<div class="card-body p-1">
 			<h4 class="card-title text-center text-info"><?= $row['product_name'] ?></h4>
-			<h5 class="card-text text-center text-danger"><i class="fas fa-dollar-sign"></i><?= number_format($row['product_price'],2) ?>/-</h5>
+			<h5 class="card-text text-center text-danger"><i class="fas fa-dollar-sign"></i><?= number_format($row['product_price'], 2) ?></h5>
 		</div>
 		<div class="card-footer p-1">
 			<form action="" class="form-submit">
