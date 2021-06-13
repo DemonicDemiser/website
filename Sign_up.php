@@ -58,20 +58,15 @@
                 <p class="headd text-start">Please sign up to access more functions.</p><hr>
             </div>
             <div>
-                <form class="row px-3" action="#" method="post">
-                    <label class="label my-2">First name</label>
-                    <input class="input rounded" type="text">
-
-                    <label class="label my-2">Last name</label>
-                    <input class="input rounded" type="text">
-
+                <form class="row px-3" action="sign_up_handler.php" method="post">
+                    <label name="username" class="label my-2">Name</label>
+                    <input class="input rounded" name="name" type="text">
                     <label class="label my-2">Email</label>
-                    <input class="input rounded" type="text">
-
+                    <input class="input rounded" name="email" type="email">
+                    <label class="label my-2">Username</label>
+                    <input class="input rounded" name="username" type="text">
                     <label class="label my-2">Password</label>
-                    <input class="input rounded" type="password">
-
-                    <label class="w-25"></label>
+                    <input class="input rounded" name="password" type="password">
                     <input class="btn btn-outline-dark mt-3 mb-4 p-1 w-50" type="submit" name="signup" value="Sign up">
                 </form>
             </div>

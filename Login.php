@@ -22,7 +22,7 @@
                     <div class="col-3 mt-2 text-end">Password</div>
                     <div class="col-9 mb-3"><input class="rounded border-0 py-2 w-75" type="password" name="password" id="pass"  placeholder="  Enter your password..."></div>
                     <div class="col-3 mb-3"></div>
-                    <div class="col-9"><input class="rounded border-0" type="checkbox" name="remember" value="1">   Remember Me</div>
+                    <div class="col-9"><a class="rounded border-0 text-decoration-none text-dark" href="includes/restore.php">Forget your password?</a></div>
                 </div>
         </div>
         <div class="modal-footer">
@@ -30,6 +30,13 @@
             <input class="btn btn-primary me-4 px-4" type="submit" id="submit" name="login" value="Login">
         </div>
     </form>
+    <?php
+    if(isset($_GET["newpwd"])){
+        if($_GET["newpwd"] == "passwordupdated"){
+            echo '<p class="signupsuccess">Your password has been reset!</p>';
+        }
+    }
+    ?>
 </div>
 
 <?php
