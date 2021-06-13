@@ -44,21 +44,7 @@ session_start();
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js" integrity="sha384-nsg8ua9HAw1y0W1btsyWgBklPnCUAFLuTMS2G72MMONqmOymq585AcH49TLBQObG" crossorigin="anonymous"></script>
     <div class="container-fluid">
-        <div class="row p-2 d-flex justify-content-between align-items-center" style="background-color: #2f2f30">
-            <div class="col-xl-2 col-lg-12 ms-5 h-100 text-center"><a href="Main.php"><img src="Pictures\logo.png" alt="Logo" style="width: 190px; height: 50px;"></a></div>
-            <div class="hoverr col-xl-1 col-lg-3 text-center"><a href="Main.php" class="text-decoration-none w-100 p-3">Home</a></div>
-            <div class="hoverr col-xl-1 col-lg-3 text-center"><a href="Products.php" class="text-decoration-none w-100 p-3">Products</a></div>
-            <div class="hoverr col-xl-2 col-lg-3 text-center"><a href="About_us.php" class="text-decoration-none w-100 p-3">About us</a></div>
-            <div class="hoverr col-xl-1 col-lg-3 text-center"><a id="scroll" class="text-decoration-none w-100 p-3">Contacts</a></div>
-            <div class="col-1"></div>
-            <div class="col-xl-3 col-sm-12">
-                <div class="row d-flex justify-content-center">
-                    <button class="col-xl-4 col-sm-2 mt-1 btn btn-outline-warning p-1" type="button" data-toggle="modal" data-target="#exampleModalCenter">Login</button>
-                    <form class="col-xl-4 col-sm-2 mt-1" action="Sign_up.php" method="post"><input class="btn btn-outline-success p-1 w-100" type="submit" name="signup" value="Sign up"></form>
-                </div>
-            </div>
-        </div>
-
+        <?php require('navigation.php'); ?>
         <div class="row">
             <div class="top row mb-4 mx-0" style="height: 650px;">
                 <div class="col-2"></div>
@@ -75,16 +61,19 @@ session_start();
                 echo "The error of mysql is: ".mysqli_error($conn);
             } else{
                 $products = mysqli_fetch_all($check, MYSQLI_NUM);
-                for ($i=0; $i < count($products); $i++) {
+                for ($i=0; $i < count($products); $i++) {   
                     echo "<div class='col-xl-4 col-sm-6 my-3 section about' style='height: 600px;'>
                             <h3 class='mb-2 text-center' style='height: 50px;'>".$products[$i][1]."</h3>
                             <image src='".$products[$i][2]."' width='100%' height='270px;'>
                             <div class='mt-2 mb-1 text-start' style='height: 140px;'>".$products[$i][3]."</div>
-                            <div class ='w-100 publishing-content text-secondary'> Publishing date: ".$products[$i][4]." </div>
-                            <a href='shopping-cart/index.php'><button type='button' onclick='/index.php' class='btn btn-dark btn-sm'>More info about ".$products[$i][1]."</button></a>
+                            <div class ='w-100 mt-3 publishing-content text-secondary'> Publishing date: ".$products[$i][4]." </div>
+                            <a href='shopping-cart/index.php'><button type='button' onclick='document.write(save());' class='btn btn-dark btn-sm'>More info about ".$products[$i][1]."</button></a>
                             <hr>
                         </div>";
-                    $_SESSION['ids']=$products[$i][0];
+                        //$_SESSION['ids']=$products[$i][0];
+                    // function save(){
+                    //     return $_SESSION['ids']=$products[$i][0];
+                    // }
                 }
             }
             ?>

@@ -47,15 +47,15 @@ session_start();
 <div class="row mt-2 pb-1">
 	<?php
 		include 'connect.php';
-		switch($_SESSION['ids']){
-			case 1: 
-				$stmt = $conn->prepare('SELECT * FROM product');
-			break;
-			case 2:
-				$stmt = $conn->prepare('SELECT * FROM cadillac');
-			break;
+		// switch($_SESSION['ids']){
+		// 	case 1: 
+		// 		$stmt = $conn->prepare('SELECT * FROM product');
+		// 	break;
+		// 	case 2:
+		// 		$stmt = $conn->prepare('SELECT * FROM cadillac');
+		// 	break;
 			// case 3:
-			// 	$stmt = $conn->prepare('SELECT * FROM product');
+			// $stmt = $conn->prepare('SELECT * FROM product');
 			// break;
 			// case 4:
 			// 	$stmt = $conn->prepare('SELECT * FROM product');
@@ -75,9 +75,10 @@ session_start();
 			// case 9:
 			// 	$stmt = $conn->prepare('SELECT * FROM product');
 			// break;
-			default:
-				$stmt = $conn->prepare('SELECT * FROM cadillac');
-		}
+		// 	default:
+		// 		$stmt = $conn->prepare('SELECT * FROM cadillac');
+		// }
+		$stmt = $conn->prepare('SELECT * FROM product');
 		$stmt->execute();
 		$result = $stmt->get_result();
 		while ($row = $result->fetch_assoc()):
@@ -119,8 +120,8 @@ session_start();
 
 <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js'></script>
 <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.2/js/bootstrap.min.js'></script>
-
 <script type="text/javascript">
+
 $(document).ready(function() {
 
 // Send product details in the server
