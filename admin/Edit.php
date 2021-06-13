@@ -1,6 +1,8 @@
 <?php
 // Start the session
 session_start();
+
+$date = date("Y-m-d");
 ?>
 
 <!DOCTYPE html>
@@ -60,6 +62,7 @@ session_start();
     }
 
     input[type=text],
+    input[type=datetime-local],
     input[type=price] {
     width: 100%;
     margin-bottom: 20px;
@@ -139,23 +142,13 @@ session_start();
                                 <h3>ADD</h3>
                                 <label for="name"><i class="fa fa-user"></i>NAME</label>
                                 <input type="text" id="fname" name="name" placeholder="Name">
-                                <div class="input-group mb-3">
-                                    <div class="input-group-prepend">
-                                        <label class="input-group-text" for="inputGroupSelect01">Categories</label>
-                                    </div>
-                                    <select class="custom-select" id="inputGroupSelect01">
-                                        <option selected>Choose...</option>
-                                        <option value="1">One</option>
-                                        <option value="2">Two</option>
-                                        <option value="3">Three</option>
-                                    </select>
-                                </div>
                                 <label for="description"><i class="fa fa-envelope"></i>DESCRIPTION</label>
                                 <input type="text" id="description" name="description" placeholder="Description">
                                 <label for="image"><i class="fa fa-envelope"></i>IMAGE</label>
                                 <input type="text" id="image" name="image" placeholder="Image">
-                                <label for="adr"><i class="fa fa-address-card-o"></i>PRICE</label>
-                                <input type="price" id="adr" name="price" placeholder="Price">
+                                <label for="image"><i class="fa fa-envelope"></i>Date</label>
+								<input class="form-control text-secondary" name="datetime" type="datetime" value="<?= $date?>">
+
                                 </div>
                             </div>
                             <input type="submit" value="Add" class="btne border">
